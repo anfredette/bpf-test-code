@@ -6,6 +6,7 @@
 SEC("classifier/drop")
 int drop(struct __sk_buff *skb)
 {
+	bpf_printk("Returning TC_ACT_SHOT");
 	return TC_ACT_SHOT;
 }
 
